@@ -1,0 +1,458 @@
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply min-h-screen bg-gray-100 font-sans;
+}
+
+.bg-body {
+  @apply bg-gray-100;
+}
+
+.bg-custom {
+  @apply bg-black;
+}
+
+/* Login Page Styling */
+.login-container {
+  @apply flex items-center justify-center h-screen bg-body;
+}
+
+.login-box {
+  @apply bg-custom p-8 rounded-lg shadow-lg w-80;
+}
+
+.login-title {
+  @apply text-white text-center text-2xl mb-6;
+}
+
+.input-label {
+  @apply text-white text-sm;
+}
+
+.input-field {
+  @apply px-3 py-2 rounded-full bg-gray-200 text-black focus:outline-none;
+}
+
+.button {
+  @apply px-4 py-2 rounded-full bg-gray-500 text-white hover:bg-gray-400 transition-colors duration-300;
+}
+
+.button-login {
+  @apply mt-6;
+}
+
+.button-create-account {
+  @apply mt-2;
+}
+
+.logo-container {
+  @apply absolute top-5 left-5;
+}
+
+.logo {
+  @apply w-48 h-auto;
+}
+
+/* Common Layout Styles */
+.barber-selection {
+  @apply min-h-screen bg-gray-100 p-8;
+}
+
+.title {
+  @apply text-xl font-semibold mb-8 text-left w-full pl-8;
+}
+
+.content-wrapper {
+  @apply flex gap-8 w-full max-w-7xl;
+}
+
+/* Barber Selection Styles */
+.barber-cards {
+  @apply flex gap-6;
+}
+
+.barber-card {
+  @apply flex flex-col items-center bg-white rounded-lg p-6 cursor-pointer shadow-md w-72;
+  transition: all 0.2s ease-in-out;
+}
+
+.barber-card:hover {
+  @apply shadow-lg scale-105;
+}
+
+.barber-card.bg-black {
+  background-color: black;
+}
+
+.barber-card.bg-black h2,
+.barber-card.bg-black p {
+  @apply text-white;
+}
+
+.barber-card.bg-black .image-container {
+  @apply border-2 border-white;
+}
+
+.image-container {
+  @apply w-20 h-20 mb-4 bg-white rounded-lg overflow-hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-container img {
+  @apply w-full h-full object-cover;
+}
+
+.barber-card h2 {
+  @apply text-lg font-medium text-gray-800 mb-2;
+  transition: color 0.2s ease-in-out;
+}
+
+.barber-card p {
+  @apply text-sm text-gray-500 text-center;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Service Selection Styles */
+.service-cards {
+  @apply grid grid-cols-3 gap-6 flex-1;
+}
+
+.service-card {
+  @apply bg-white rounded-lg p-6 cursor-pointer shadow-md relative;
+  transition: all 0.2s ease-in-out;
+  height: 160px;
+}
+
+.service-card:hover {
+  @apply shadow-lg scale-105;
+}
+
+.service-details {
+  @apply flex flex-col;
+}
+
+.service-details h2 {
+  @apply text-lg font-medium text-gray-800 mb-2;
+}
+
+.service-details p {
+  @apply text-sm text-gray-500;
+}
+
+.service-price {
+  @apply absolute bottom-6 right-6 
+         bg-gray-50 px-2 py-1 rounded-md 
+         text-gray-900;
+}
+
+/* Selected Service Styling */
+.service-card.bg-black {
+  background-color: black;
+}
+
+.service-card.bg-black .service-details h2,
+.service-card.bg-black .service-details p,
+.service-card.bg-black .service-price {
+  @apply text-white;
+}
+
+.service-card.bg-black .service-price {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Checkmark Styling */
+.check-mark {
+  @apply absolute top-3 right-3 bg-black rounded-full border-2 border-white 
+         flex items-center justify-center p-1;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+.check-mark.hoverable {
+  @apply cursor-pointer;
+}
+
+.check-mark.hoverable:hover {
+  @apply bg-red-600;
+}
+
+.check-mark > svg {
+  @apply h-4 w-4 text-white;
+}
+
+/* Info Card Styles */
+.info-card {
+  @apply w-96 bg-white rounded-lg p-8 shadow-md;
+}
+
+.info-content {
+  @apply bg-gray-200 rounded-lg p-6 min-h-[256px] flex flex-col;
+}
+
+/* Info Card Content Styling */
+.barber-info {
+  @apply flex items-center gap-3 mb-6;
+}
+
+.barber-info img {
+  @apply w-8 h-8 rounded-sm object-cover;
+}
+
+.selected-service {
+  @apply mt-4 pt-4 border-t border-gray-200;
+}
+
+.selected-service p {
+  @apply mb-2 text-gray-700;
+}
+
+.selected-service strong {
+  @apply font-medium mr-2;
+}
+
+/* Order Summary Styles */
+.order-summary {
+  @apply bg-white rounded-2xl shadow-sm p-6;
+}
+
+.order-summary-content {
+  @apply mt-6 space-y-4;
+}
+
+.order-summary-service {
+  @apply flex justify-between items-start py-2;
+}
+
+.order-summary-service:not(:last-child) {
+  @apply border-b border-gray-100;
+}
+
+.order-total {
+  @apply pt-4 border-t border-gray-200
+         flex justify-between items-center;
+}
+
+.choose-time-button {
+  @apply w-full bg-black text-white py-3 rounded-lg mt-4 
+         hover:bg-gray-900 transition-colors duration-200;
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+  .content-wrapper {
+    @apply flex-col;
+  }
+
+  .barber-cards {
+    @apply flex-wrap justify-center;
+  }
+
+  .service-cards {
+    @apply grid-cols-2;
+  }
+
+  .info-card {
+    @apply w-full;
+  }
+}
+
+@media (max-width: 768px) {
+  .barber-card {
+    @apply w-full;
+  }
+
+  .barber-cards {
+    @apply flex-col;
+  }
+
+  .service-cards {
+    @apply grid-cols-1;
+  }
+
+  .title {
+    @apply pl-0;
+  }
+}
+
+/* Page Transition Animations */
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Enhanced Card Transitions */
+.barber-card {
+  @apply flex flex-col items-center bg-white rounded-lg p-6 cursor-pointer shadow-md w-72;
+  transition: all 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.service-card {
+  @apply bg-white rounded-lg p-6 cursor-pointer shadow-md relative;
+  transition: all 0.3s ease-in-out, background-color 0.3s ease;
+  height: 160px;
+}
+
+/* Update transition properties for text elements */
+.barber-card h2,
+.barber-card p,
+.service-card h2,
+.service-card p {
+  transition: color 0.3s ease;
+}
+
+.image-container {
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+/* Updated hover states */
+.barber-card:hover,
+.service-card:hover {
+  @apply shadow-lg;
+  transform: scale(1.05);
+}
+
+/* Prevent hover scaling on selected cards */
+.barber-card.bg-black:hover,
+.service-card.bg-black:hover {
+  transform: none;
+}
+
+/* App container style */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Enhanced checkmark transitions */
+.check-mark {
+  @apply absolute -top-3 -right-3 h-7 w-7 bg-black rounded-full border-2 border-white 
+         flex items-center justify-center;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.check-mark.hoverable {
+  @apply cursor-pointer;
+}
+
+.check-mark.hoverable:hover {
+  @apply bg-red-600;
+  transform: scale(1.1);
+}
+
+.check-mark > svg {
+  @apply h-4 w-4 text-white;
+  transition: transform 0.3s ease;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+
+.animate-pulse {
+  background: linear-gradient(
+    to right,
+    #f6f7f8 8%,
+    #edeef1 18%,
+    #f6f7f8 33%
+  );
+  background-size: 800px 104px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/*Add a base loading state class */
+.loading-state {
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumb-container {
+  @apply flex items-center gap-2 text-sm mb-8;
+}
+
+.breadcrumb-item {
+  @apply transition-colors duration-200;
+}
+
+.breadcrumb-item.clickable {
+  @apply cursor-pointer hover:text-gray-600;
+}
+
+.breadcrumb-item.active {
+  @apply text-gray-900;
+}
+
+.breadcrumb-separator {
+  @apply text-gray-400;
+}
+
+/* About Us Page Styles */
+.about-us-card {
+  @apply bg-white rounded-2xl shadow-sm p-16 max-w-4xl mx-auto;
+}
+
+.about-us-title {
+  @apply text-4xl font-serif text-center mb-12;
+}
+
+.about-us-text {
+  @apply text-xl leading-relaxed font-serif text-gray-800;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb-nav {
+  @apply flex items-center gap-2 text-sm mb-8;
+}
+
+.breadcrumb-item {
+  @apply transition-colors duration-200 font-medium;
+}
+
+.breadcrumb-item-clickable {
+  @apply cursor-pointer hover:text-gray-600 relative;
+}
+
+.breadcrumb-item-clickable:after {
+  content: '';
+  @apply absolute left-0 right-0 bottom-0 h-0.5 bg-gray-600 scale-x-0 transition-transform duration-200;
+  transform-origin: center;
+}
+
+.breadcrumb-item-clickable:hover:after {
+  @apply scale-x-100;
+}
+
+.breadcrumb-item-active {
+  @apply text-gray-900;
+}
+
+.breadcrumb-item-disabled {
+  @apply text-gray-400 cursor-not-allowed opacity-50;
+}
+
